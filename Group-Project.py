@@ -1,9 +1,10 @@
 license_plate = input("What is your license?")
 
+
 class ParkingGarage():
-    def __init__(self, license_plate, parking_spots = 20, total_tickets = 20, customerTicket = {}):
-        self.total_tickets = total_tickets
-        self.parking_spots = parking_spots
+    def __init__(self, license_plate, customerTicket={}) :
+        self.total_tickets = 20
+        self.parking_spots = 20
         self.license_plate = license_plate
         self.customerTicket = customerTicket
 
@@ -15,12 +16,13 @@ class ParkingGarage():
         else:
             print("Sorry, we are full")
 
-    def payForTicket(self): 
-        if False in self.customerTicket :
-            payment_amount = input("Please pay $20:\nHow much are you paying?")
-            self.customerTicket[license_plate] = True 
+     def payForTicket(self): 
+        payment_amount=int(input( "Please enter your payment of $20:"))
         if payment_amount == 20 :
-            print("You have already paid.")
+            print("Your payment has been accepted. You have 15 minutes to leave the parking lot.")
+            self.customer_ticket[self.license_plate] = True
+        else:
+            print("That is not a valid amount. Please try again.")
 
         
 
